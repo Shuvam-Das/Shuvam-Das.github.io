@@ -80,6 +80,7 @@
         border-radius: 5px;
         border: 1px solid #ccc;
         max-width: 200px;
+		color: black; /* Ensures text is visible */										   
       }
 
       .contact-form button {
@@ -147,7 +148,7 @@
         margin-bottom: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
-							   
+		color: black; /* Ensures text is visible */					   
 						 
       }
 
@@ -204,6 +205,7 @@
       <p id="welcomeMessage"></p>
       <input type="text" id="visitorName" placeholder="Your Name" />
       <button onclick="saveVisitorName()">Submit</button>
+																 
     </div>
 
     <!-- Header Section -->
@@ -452,17 +454,40 @@
     </div>
 
 					
-    <div class="contact-form">
-      <input type="text" id="name" name="name" placeholder="Your Name" />
-      <input type="email" id="email" name="email" placeholder="Your Email" />
-      <textarea
-        id="message"
-						 
-        name="message"
-        placeholder="Your Message"
-      ></textarea>
-      <button type="submit">Submit</button>
-    </div>
+ <form
+															
+        class="contact-form"
+        id="contactForm"
+        action="/contact"
+        method="POST"
+																			
+      >
+        <input
+          type="text"
+																			  						  
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required
+							   												  
+        />
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <button type="submit">Submit</button>
+      </form>
+
 
     <p>&copy; 2024 Shuvam Das. All Rights Reserved.</p>
   </footer>

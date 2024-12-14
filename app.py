@@ -3,35 +3,27 @@ import os
 
 app = Flask(__name__)
 
-# Set the path for static files like images and CSS
-app.static_folder = 'static'
-
 @app.route('/')
 def index():
     return render_template('index.html')
 
 @app.route('/contact', methods=['POST'])
 def contact():
-    # Fetch data from the form
+    # Fetch form data
     name = request.form.get('name')
     email = request.form.get('email')
     message = request.form.get('message')
 
-    # For now, print the form data to the console
-    print(f"Name: {name}, Email: {email}, Message: {message}")
+    # Log the form data (this could be saved to a database or sent via email in a real app)
+    print(f"Contact Form Submission: Name={name}, Email={email}, Message={message}")
 
-    # Return a JSON response
-    return jsonify({
-        'status': 'success',
-        'message': 'Thank you for contacting me!'
-    })
+    # Respond back to the client
+    return jsonify({"status": "success", "message": "Thank you for reaching out! Your message has been received."})
 
 if __name__ == '__main__':
-    # Ensure templates folder exists
+    # Ensure required directories exist
     if not os.path.exists('templates'):
         os.makedirs('templates')
-
-    # Ensure static folder exists
     if not os.path.exists('static'):
         os.makedirs('static')
 
