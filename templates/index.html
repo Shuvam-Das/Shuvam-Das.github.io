@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shuvam Das - Freelancing Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Background Animation */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .about-section {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .social-media img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .skill-grid,
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .contact-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        max-width: 200px;
+      }
+
+      .contact-form button {
+        background-color: #23a6d5;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .contact-form button:hover {
+        background-color: #1e88b5;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Welcome Dialog Box -->
+    <div id="welcomeDialog" class="dialog-box" style="display: none">
+      <p id="welcomeMessage"></p>
+      <input type="text" id="visitorName" placeholder="Your Name" />
+      <button onclick="saveVisitorName()">Submit</button>
+    </div>
+
+    <!-- Header Section -->
+    <header class="text-center py-5 bg-blue-800 text-white">
+      <h1 class="text-4xl font-bold">Shuvam Das</h1>
+      <nav class="mt-4">
+        <a href="#about" class="text-white mx-2 hover:underline">About</a>
+        <a href="#skills" class="text-white mx-2 hover:underline">Skills</a>
+        <a href="#projects" class="text-white mx-2 hover:underline">Projects</a>
+        <a href="#connect" class="text-white mx-2 hover:underline">Connect</a>
+        <a href="#contact" class="text-white mx-2 hover:underline">Contact</a>
+      </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+      <div class="card about-section">
+        <img
+          src="/static/images/profile.jpg"
+          alt="Profile Picture"
+          style="width: 150px; border-radius: 50%"
+        />
+        <div>
+          <h2>About Me</h2>
+          <p>
+            An experienced Performance Test Engineer, I specialize in
+            performance testing, monitoring, and defect resolution. My career
+            journey has been marked by a strong passion for optimizing software
+            applications to ensure peak performance and reliability. I thrive in
+            environments that challenge me to enhance efficiency and contribute
+            to impactful projects.
+          </p>
+
+          <p>
+            Currently, at Tech Mahindra, I collaborate closely with
+            cross-functional teams to integrate performance enhancements
+            seamlessly into existing systems. I am adept at adjusting testing
+            strategies to meet changing project requirements, optimizing code
+            quality, and creating custom benchmark tests to exceed client
+            expectations. My proactive approach has significantly reduced
+            production issues and increased the efficiency of test cycles
+            through the development of reusable test scripts.
+          </p>
+
+          <p>
+            With a solid technical foundation in tools such as Dynatrace,
+            Neoload, and JMeter, and proficiency in languages like Python and
+            SQL, I bring a comprehensive skill set to any project. I have a
+            proven track record of improving application performance and
+            receiving positive stakeholder feedback for my contributions.
+          </p>
+
+          <p>
+            I hold a Bachelor's degree in Electronics and Communication
+            Engineering and have earned multiple certifications, including the
+            Business Analyst Certificate from CoachX and Microsoft Azure
+            Fundamentals (AZ-900).
+          </p>
+
+          <p>
+            Beyond work, I stay updated with the latest technological
+            advancements and enjoy listening to music and surfing the internet.
+            Fluent in Bangla, English, and Hindi, I am equipped to engage and
+            collaborate in diverse environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+      <h2 class="text-3xl font-bold text-center mb-6">Skills</h2>
+      <div class="skill-grid">
+        <div class="card skill-card-performance">
+          <h3>Performance Testing:</h3>
+          <p>
+            • Neoload • JMeter • Dynatrace • OEM • SQL • JIRA • GIT • Jira
+            Confluence • Postman Tool
+          </p>
+        </div>
+        <div class="card skill-card-data">
+          <h3>Data Analyst</h3>
+          <p>
+            • Power BI • Excel • SQL • Basic Python • Tableau • Data Analysis •
+            Data Visualization • ETL Processes • Data Modeling
+          </p>
+        </div>
+        <div class="card skill-card-business">
+          <h3>Business Analysis</h3>
+          <p>
+            • Requirement Analysis • Task Prioritization • Defect Management •
+            User Story Creation • Statistical Analysis • Functional Testing •
+            Business Reporting Analysis • Business Process Automation
+            •Requirements Gathering • Business Intelligence • Technical
+            Documentation • Scrum Agile Methodology • Pattern Recognition
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+      <h2 class="text-3xl font-bold text-center mb-6">Projects</h2>
+      <div class="project-grid">
+        <div class="card project-card-performance">
+          <h3>Amazon Sales Dashboard</h3>
+          <p>Developed an interactive dashboard using Power BI.</p>
+        </div>
+        <div class="card project-card-data">
+          <h3>Hotel Booking Analysis</h3>
+          <p>Analyzed booking trends using Excel.</p>
+        </div>
+        <div class="card project-card-business">
+          <p>
+            • Coordinated cross-functional efforts for successful integration of
+            performance enhancements into existing systems without disruption.
+          </p>
+          <p>
+            • Adapted to changing project requirements by adjusting testing
+            strategies and providing timely recommendations for necessary
+            adjustments.
+          </p>
+          <p>
+            • Collaborated with development teams to optimize code quality,
+            resulting in improved application performance.
+          </p>
+          <p>
+            • Established clear guidelines for troubleshooting procedures,
+            minimizing downtime during critical phases of development projects.
+          </p>
+          <p>
+            • Designed custom benchmark tests based on client
+            requirements,demonstrating how proposed solutions met or exceeded
+            expectations.
+          </p>
+          <p>
+            • Reduced production issues by conducting thorough load and stress
+            testing on applications prior to release.
+          </p>
+          <p>
+            • Increased efficiency of test cycles by creating reusable test
+            scripts, saving time and resources.
+          </p>
+          <p>
+            • Regularly communicated project progress with stakeholders through
+            detailed written documentation and oral presentations, ensuring
+            alignment and transparency.
+          </p>
+          <p>
+            • Conducted load, stress and endurance tests using Neoload to
+            simulate realistic user activities.
+          </p>
+          <p>
+            • Reviewed scalability,performance and load balancing of each
+            application.
+          </p>
+          <p>
+            • Monitored resolution of bugs, tested fixes, and helped developers
+            tackle ongoing problems by providing QA perspective.
+          </p>
+          <p>
+            • Used monitoring tools like Dynatrace and OEM tools on frequent
+            basis.
+          </p>
+          <p>
+            • Operated under Agile and Scrum frameworks to complete releases and
+            well-organized sprints.
+          </p>
+          <p>• Analyzed system architecture and application components.</p>
+          <p>
+            • Prepared and presented comprehensive test plans, including
+            recommended testing types.
+          </p>
+          <p>
+            • Developed robust performance test scripts with parameterization,
+            correlation, and error handling.
+          </p>
+          <p>
+            • Conducted proof-of-concept (POC) evaluations for new tools and
+            technologies.
+          </p>
+          <p>
+            • Designed effective controller scenarios based on client inputs.
+          </p>
+          <p>
+            • Executed performance tests, monitored servers, and analyzed
+            response times.
+          </p>
+          <p>
+            • Utilized monitoring tools like Dynatrace, AppDynamics, and
+            SiteScope.
+          </p>
+          <p>
+            • Tracked defects during testing and documented solutions for
+            reference.
+          </p>
+          <p>
+            • Participated in status calls with stakeholders to address issues.
+          </p>
+          <p>• Documented test results in prescribed formats.</p>
+          <p>
+            • Prepared preliminary and final performance execution summary
+            reports.
+          </p>
+          <p>
+            • Took end-to-end ownership of projects, ensuring timely delivery.
+          </p>
+          <p>
+            • Mentored junior team members on technical aspects of performance
+            testing.
+          </p>
+          <p>• Analyzed performance issues using monitoring tools.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect and Contact Section -->
+    <section id="connect" class="container">
+      <h2 class="text-3xl font-bold text-center mb-6">Connect with Me</h2>
+      <div class="row">
+        <a
+          href="https://www.linkedin.com/in/das-shuvam"
+          target="_blank"
+          class="social-media"
+        >
+          <img src="/static/icons/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="mailto:dasshuvam305@gmail.com" class="social-media">
+          <img src="/static/icons/email.png" alt="Email" />
+        </a>
+        <a
+          href="https://github.com/Shuvam-Das"
+          target="_blank"
+          class="social-media"
+        >
+          <img src="/static/icons/github.png" alt="GitHub" />
+        </a>
+        <a
+          href="https://wa.me/qr/53SMLQGWMSZ3E1"
+          target="_blank"
+          class="social-media"
+        >
+          <img src="/static/icons/whatsapp.png" alt="WhatsApp" />
+        </a>
+        <a
+          href="https://www.facebook.com/share/ZWhwMAgU54LzhGJ2/"
+          target="_blank"
+          class="social-media"
+        >
+          <img src="/static/icons/facebook.png" alt="Facebook" />
+        </a>
+        <a
+          href="https://www.instagram.com/shuvam_da_s/profilecard/?igsh=eTAyZGd0aWduYXg1"
+          target="_blank"
+          class="social-media"
+        >
+          <img src="/static/icons/instagram.png" alt="Instagram" />
+        </a>
+        <a
+          href="https://youtube.com/@learnwithshuvam?si=Uy-phaU5wizKVDWk"
+          target="_blank"
+          class="social-media"
+        >
+          <img src="/static/icons/youtube.png" alt="YouTube" />
+        </a>
+        <a href="https://t.me/Shuvam_Das" target="_blank" class="social-media">
+          <img src="/static/icons/telegram.png" alt="Telegram" />
+        </a>
+      </div>
+
+      <div class="contact-form mt-6">
+        <input type="text" id="name" name="name" placeholder="Your Name" />
+        <input type="email" id="email" name="email" placeholder="Your Email" />
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Your Message"
+        ></textarea>
+        <button type="submit">Submit</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+      <p>&copy; 2024 Shuvam Das. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // Welcome Dialog Box Logic
+      const welcomeDialog = document.getElementById("welcomeDialog");
+      const welcomeMessage = document.getElementById("welcomeMessage");
+
+      function getVisitorName() {
+        const name = localStorage.getItem("visitorName");
+        if (name) {
+          welcomeMessage.textContent = `Hi ${name}, thanks for visiting again!`;
+        } else {
+          welcomeDialog.style.display = "block";
+          welcomeMessage.textContent = `Hi, this is Shuvam. May I know your name?`;
+        }
+      }
+
+      function saveVisitorName() {
+        const visitorName = document.getElementById("visitorName").value;
+        if (visitorName) {
+          localStorage.setItem("visitorName", visitorName);
+          welcomeDialog.style.display = "none";
+          alert("Thanks! Noted.");
+        }
+      }
+
+      window.onload = getVisitorName;
+    </script>
+  </body>
+</html>
