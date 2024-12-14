@@ -9,16 +9,11 @@ def index():
 
 @app.route('/contact', methods=['POST'])
 def contact():
-    # Fetch form data
     name = request.form.get('name')
     email = request.form.get('email')
     message = request.form.get('message')
-
-    # Log the form data (this could be saved to a database or sent via email in a real app)
-    print(f"Contact Form Submission: Name={name}, Email={email}, Message={message}")
-
-    # Respond back to the client
-    return jsonify({"status": "success", "message": "Thank you for reaching out! Your message has been received."})
+    print(f"Received: Name={name}, Email={email}, Message={message}")
+    return jsonify({"status": "success", "message": "Message received!"})
 
 if __name__ == '__main__':
     # Ensure required directories exist
