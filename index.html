@@ -94,6 +94,108 @@
       .contact-form button:hover {
         background-color: #1e88b5;
       }
+	  
+	  
+      .footer {
+        background-color: #444;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+		position: relative;				   
+      }
+
+      .footer .social-media {
+        margin: 20px 0;
+      }
+
+      .footer .social-media a {
+        margin: 0 10px;
+        display: inline-block;
+      }
+
+      .footer .social-media img {
+        width: 30px;
+        height: 30px;
+      }
+
+     .chatbot {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: 300px;
+        z-index: 1000;
+      }
+
+      .chatbot h3 {
+        background-color: #23a6d5;
+        color: white;
+        padding: 10px;
+        margin: -10px -10px 10px -10px;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+      }
+
+      .chatbot input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+							   
+						 
+      }
+
+      .chatbot button {
+        background-color: #23a6d5;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .chatbot button:hover {
+        background-color: #1e88b5;
+      }				
+						
+      .footer .contact-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .footer .contact-form input,
+      .footer .contact-form textarea {
+        padding: 8px;
+							
+							   
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        max-width: 200px;
+      }
+
+      .footer .contact-form button {
+        background-color: #ff5722;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .footer .contact-form button:hover {
+        background-color: #e64a19;
+      }
+	  
     </style>
   </head>
   <body>
@@ -109,8 +211,10 @@
       <h1 class="text-4xl font-bold">Shuvam Das</h1>
       <nav class="mt-4">
         <a href="#about" class="text-white mx-2 hover:underline">About</a>
+																 
         <a href="#skills" class="text-white mx-2 hover:underline">Skills</a>
         <a href="#projects" class="text-white mx-2 hover:underline">Projects</a>
+														   
         <a href="#connect" class="text-white mx-2 hover:underline">Connect</a>
         <a href="#contact" class="text-white mx-2 hover:underline">Contact</a>
       </nav>
@@ -317,101 +421,95 @@
         </div>
       </div>
     </section>
+  <!-- Footer Section -->
+  <footer class="footer">
+    <h2 class="text-xl font-bold">Connect with Me</h2>
+    <div class="social-media">
+      <a href="https://www.linkedin.com/in/das-shuvam" target="_blank">
+        <img src="/static/icons/linkedin.png" alt="LinkedIn" />
+      </a>
+      <a href="mailto:dasshuvam305@gmail.com">
+        <img src="/static/icons/email.png" alt="Email" />
+      </a>
+      <a href="https://github.com/Shuvam-Das" target="_blank">
+        <img src="/static/icons/github.png" alt="GitHub" />
+      </a>
+      <a href="https://wa.me/qr/53SMLQGWMSZ3E1" target="_blank">
+        <img src="/static/icons/whatsapp.png" alt="WhatsApp" />
+      </a>
+      <a href="https://www.facebook.com/share/ZWhwMAgU54LzhGJ2/" target="_blank">
+        <img src="/static/icons/facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/shuvam_da_s/profilecard/?igsh=eTAyZGd0aWduYXg1" target="_blank">
+        <img src="/static/icons/instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://youtube.com/@learnwithshuvam?si=Uy-phaU5wizKVDWk" target="_blank">
+        <img src="/static/icons/youtube.png" alt="YouTube" />
+      </a>
+       <a href="https://t.me/Shuvam_Das" target="_blank">
+        <img src="/static/icons/telegram.png" alt="Telegram" />
+      </a>
+    </div>
 
-    <!-- Connect and Contact Section -->
-    <section id="connect" class="container">
-      <h2 class="text-3xl font-bold text-center mb-6">Connect with Me</h2>
-      <div class="row">
-        <a
-          href="https://www.linkedin.com/in/das-shuvam"
-          target="_blank"
-          class="social-media"
-        >
-          <img src="/static/icons/linkedin.png" alt="LinkedIn" />
-        </a>
-        <a href="mailto:dasshuvam305@gmail.com" class="social-media">
-          <img src="/static/icons/email.png" alt="Email" />
-        </a>
-        <a
-          href="https://github.com/Shuvam-Das"
-          target="_blank"
-          class="social-media"
-        >
-          <img src="/static/icons/github.png" alt="GitHub" />
-        </a>
-        <a
-          href="https://wa.me/qr/53SMLQGWMSZ3E1"
-          target="_blank"
-          class="social-media"
-        >
-          <img src="/static/icons/whatsapp.png" alt="WhatsApp" />
-        </a>
-        <a
-          href="https://www.facebook.com/share/ZWhwMAgU54LzhGJ2/"
-          target="_blank"
-          class="social-media"
-        >
-          <img src="/static/icons/facebook.png" alt="Facebook" />
-        </a>
-        <a
-          href="https://www.instagram.com/shuvam_da_s/profilecard/?igsh=eTAyZGd0aWduYXg1"
-          target="_blank"
-          class="social-media"
-        >
-          <img src="/static/icons/instagram.png" alt="Instagram" />
-        </a>
-        <a
-          href="https://youtube.com/@learnwithshuvam?si=Uy-phaU5wizKVDWk"
-          target="_blank"
-          class="social-media"
-        >
-          <img src="/static/icons/youtube.png" alt="YouTube" />
-        </a>
-        <a href="https://t.me/Shuvam_Das" target="_blank" class="social-media">
-          <img src="/static/icons/telegram.png" alt="Telegram" />
-        </a>
-      </div>
+					
+    <div class="contact-form">
+      <input type="text" id="name" name="name" placeholder="Your Name" />
+      <input type="email" id="email" name="email" placeholder="Your Email" />
+      <textarea
+        id="message"
+						 
+        name="message"
+        placeholder="Your Message"
+      ></textarea>
+      <button type="submit">Submit</button>
+    </div>
 
-      <div class="contact-form mt-6">
-        <input type="text" id="name" name="name" placeholder="Your Name" />
-        <input type="email" id="email" name="email" placeholder="Your Email" />
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Your Message"
-        ></textarea>
-        <button type="submit">Submit</button>
-      </div>
-    </section>
+    <p>&copy; 2024 Shuvam Das. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
 
-    <!-- Footer -->
-    <footer class="text-center py-3">
-      <p>&copy; 2024 Shuvam Das. All Rights Reserved.</p>
-    </footer>
+    <!-- Chatbot -->
+    <div class="chatbot" id="chatbot">
+      <h3>Welcome Bot</h3>
+      <div id="chatbotMessage">Loading...</div>
+      <input
+        type="text"
+        id="chatbotInput"
+        placeholder="Enter your name"
+        style="display: none"
+      />
+      <button id="chatbotButton" style="display: none">Submit</button>
+    </div>
 
     <script>
-      // Welcome Dialog Box Logic
-      const welcomeDialog = document.getElementById("welcomeDialog");
-      const welcomeMessage = document.getElementById("welcomeMessage");
+    // Chatbot Logic
+      const chatbot = document.getElementById("chatbot");
+      const chatbotMessage = document.getElementById("chatbotMessage");
+      const chatbotInput = document.getElementById("chatbotInput");
+      const chatbotButton = document.getElementById("chatbotButton");
 
       function getVisitorName() {
         const name = localStorage.getItem("visitorName");
         if (name) {
-          welcomeMessage.textContent = `Hi ${name}, thanks for visiting again!`;
+          chatbotMessage.textContent = `Hi ${name}, thanks for visiting my portfolio!`;
         } else {
-          welcomeDialog.style.display = "block";
-          welcomeMessage.textContent = `Hi, this is Shuvam. May I know your name?`;
+												
+          chatbotMessage.textContent = `Hi! I don't know your name yet. Please enter your name below:`;
+          chatbotInput.style.display = "block";
+          chatbotButton.style.display = "block";
         }
       }
 
-      function saveVisitorName() {
-        const visitorName = document.getElementById("visitorName").value;
-        if (visitorName) {
-          localStorage.setItem("visitorName", visitorName);
-          welcomeDialog.style.display = "none";
-          alert("Thanks! Noted.");
+      chatbotButton.addEventListener("click", () => {
+        const name = chatbotInput.value;
+        if (name) {
+          localStorage.setItem("visitorName", name);
+          chatbotMessage.textContent = `Thanks, ${name}! Noted.`;
+          chatbotInput.style.display = "none";
+          chatbotButton.style.display = "none";
         }
-      }
+      });
 
       window.onload = getVisitorName;
     </script>
