@@ -22,8 +22,8 @@ def contact():
 
 if __name__ == '__main__':
     # Ensure required directories exist
-    if not os.path.exists('templates'):
-        os.makedirs('templates')
+    if not os.path.exists('index.html'):
+        os.makedirs('index.html')
     if not os.path.exists('static'):
         os.makedirs('static')
 
