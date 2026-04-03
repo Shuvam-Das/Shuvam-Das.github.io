@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | Shuvam Das</title>
+    <meta name="robots" content="noindex" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/static/images/profile.jpg" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              charcoal: "#121212",
+              navy: "#0f172a",
+              emerald: {
+                400: "#34d399",
+                500: "#10b981",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #121212;
+        color: #e2e8f0;
+      }
+      /* Glitch effect style for 404 */
+      .glitch {
+        text-shadow:
+          0.05em 0 0 rgba(52, 211, 153, 0.75),
+          -0.025em -0.05em 0 rgba(255, 255, 255, 0.3),
+          0.025em 0.05em 0 rgba(52, 211, 153, 0.3);
+        animation: glitch 1000ms infinite;
+      }
+      @keyframes glitch {
+        0% {
+          text-shadow:
+            0.05em 0 0 rgba(52, 211, 153, 0.75),
+            -0.05em -0.025em 0 rgba(255, 255, 255, 0.3),
+            -0.025em 0.05em 0 rgba(52, 211, 153, 0.3);
+        }
+        14% {
+          text-shadow:
+            0.05em 0 0 rgba(52, 211, 153, 0.75),
+            -0.05em -0.025em 0 rgba(255, 255, 255, 0.3),
+            -0.025em 0.05em 0 rgba(52, 211, 153, 0.3);
+        }
+        15% {
+          text-shadow:
+            -0.05em -0.025em 0 rgba(52, 211, 153, 0.75),
+            0.025em 0.025em 0 rgba(255, 255, 255, 0.3),
+            -0.05em -0.05em 0 rgba(52, 211, 153, 0.3);
+        }
+        49% {
+          text-shadow:
+            -0.05em -0.025em 0 rgba(52, 211, 153, 0.75),
+            0.025em 0.025em 0 rgba(255, 255, 255, 0.3),
+            -0.05em -0.05em 0 rgba(52, 211, 153, 0.3);
+        }
+        50% {
+          text-shadow:
+            0.025em 0.05em 0 rgba(52, 211, 153, 0.75),
+            0.05em 0 0 rgba(255, 255, 255, 0.3),
+            0 -0.05em 0 rgba(52, 211, 153, 0.3);
+        }
+        99% {
+          text-shadow:
+            0.025em 0.05em 0 rgba(52, 211, 153, 0.75),
+            0.05em 0 0 rgba(255, 255, 255, 0.3),
+            0 -0.05em 0 rgba(52, 211, 153, 0.3);
+        }
+        100% {
+          text-shadow:
+            -0.025em 0 0 rgba(52, 211, 153, 0.75),
+            -0.025em -0.025em 0 rgba(255, 255, 255, 0.3),
+            -0.025em -0.05em 0 rgba(52, 211, 153, 0.3);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="font-sans antialiased min-h-screen flex flex-col items-center justify-center bg-navy px-4 text-center"
+  >
+    <div class="max-w-2xl mx-auto flex flex-col items-center">
+      <h1
+        class="text-7xl md:text-9xl font-bold text-emerald-400 mb-2 glitch tracking-tighter"
+      >
+        404
+      </h1>
+      <h2 class="text-2xl md:text-4xl font-semibold text-white mb-6">
+        System Serialization Point Found
+      </h2>
+      <p class="text-gray-400 text-lg mb-10 max-w-lg leading-relaxed">
+        It looks like the page you are trying to reach has experienced a latency
+        timeout or doesn't exist in the current architecture.
+      </p>
+
+      <a
+        href="/"
+        class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-md font-semibold transition-colors shadow-[0_0_15px_rgba(16,185,129,0.3)] flex items-center gap-2"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          ></path>
+        </svg>
+        Return to Main Node
+      </a>
+
+      <!-- Easter Egg Trigger -->
+      <button
+        onclick="startDiagnostics()"
+        id="diagnostic-btn"
+        class="mt-16 text-sm text-gray-600 hover:text-emerald-400 transition-colors font-mono cursor-pointer focus:outline-none"
+      >
+        > initiate_manual_override.exe
+      </button>
+
+      <!-- Minigame Container -->
+      <div
+        id="diagnostic-game"
+        class="hidden mt-8 flex-col items-center w-full animate-fade-in"
+      >
+        <div
+          class="flex justify-between w-full max-w-[300px] mb-2 font-mono text-sm"
+        >
+          <span class="text-gray-400"
+            >Data Packets:
+            <span id="score" class="text-emerald-400 font-bold">0</span></span
+          >
+          <span class="text-gray-400"
+            >Best:
+            <span id="high-score" class="text-emerald-400 font-bold"
+              >0</span
+            ></span
+          >
+        </div>
+        <div
+          class="flex justify-center w-full max-w-[300px] mb-2 font-mono text-sm"
+        >
+          <span id="game-status" class="text-emerald-400">Running...</span>
+        </div>
+        <canvas
+          id="gameCanvas"
+          width="300"
+          height="300"
+          class="bg-charcoal border-2 border-gray-800 rounded shadow-[0_0_15px_rgba(16,185,129,0.15)]"
+        ></canvas>
+        <p class="text-gray-500 text-xs mt-4 font-mono">
+          Use ARROW KEYS to navigate. Press SPACE to restart.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      let canvas, ctx, gameLoop;
+      let gridSize = 15;
+      let tileCount = 20; // 15px * 20 tiles = 300px canvas
+      let snake = [];
+      let apple = {};
+      let dx = 0,
+        dy = 0;
+      let score = 0;
+      let gameRunning = false;
+      let gameSpeed = 100;
+      let highScore = 0;
+      const highScoreKey = "snakeGameHighScore";
+      let audioCtx;
+
+      function playBip() {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === "suspended") audioCtx.resume();
+
+        const oscillator = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+
+        oscillator.type = "square"; // Retro 8-bit sound
+        oscillator.frequency.setValueAtTime(880, audioCtx.currentTime); // Pitch
+        gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime); // Volume
+        gainNode.gain.exponentialRampToValueAtTime(
+          0.001,
+          audioCtx.currentTime + 0.1,
+        ); // Quick fade
+
+        oscillator.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        oscillator.start();
+        oscillator.stop(audioCtx.currentTime + 0.1);
+      }
+
+      function startDiagnostics() {
+        document.getElementById("diagnostic-btn").classList.add("hidden");
+        const gameContainer = document.getElementById("diagnostic-game");
+        gameContainer.classList.remove("hidden");
+        gameContainer.classList.add("flex");
+
+        canvas = document.getElementById("gameCanvas");
+        ctx = canvas.getContext("2d");
+
+        // Load high score from local storage
+        highScore = parseInt(localStorage.getItem(highScoreKey) || "0", 10);
+        document.getElementById("high-score").innerText = highScore;
+
+        document.addEventListener("keydown", handleInput);
+        resetGame();
+      }
+
+      function resetGame() {
+        snake = [
+          { x: 10, y: 10 },
+          { x: 10, y: 11 },
+          { x: 10, y: 12 },
+        ];
+        dx = 0;
+        dy = -1; // start moving up
+        score = 0;
+        gameSpeed = 100; // Reset speed
+
+        document.getElementById("score").innerText = score;
+        document.getElementById("game-status").innerText = "Running...";
+        document.getElementById("game-status").className = "text-emerald-400";
+
+        placeApple();
+
+        if (gameLoop) clearInterval(gameLoop);
+        gameRunning = true;
+        gameLoop = setInterval(update, gameSpeed); // Use variable for game speed
+
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+
+      function placeApple() {
+        apple = {
+          x: Math.floor(Math.random() * tileCount),
+          y: Math.floor(Math.random() * tileCount),
+        };
+        // Prevent apple from spawning on the snake itself
+        for (let part of snake) {
+          if (part.x === apple.x && part.y === apple.y) {
+            placeApple();
+            break;
+          }
+        }
+      }
+
+      function update() {
+        if (!gameRunning) return;
+        let head = { x: snake[0].x + dx, y: snake[0].y + dy };
+
+        // Wrap around walls infinitely (terminal style!)
+        if (head.x < 0) head.x = tileCount - 1;
+        if (head.x >= tileCount) head.x = 0;
+        if (head.y < 0) head.y = tileCount - 1;
+        if (head.y >= tileCount) head.y = 0;
+
+        // Self collision check
+        for (let i = 0; i < snake.length; i++) {
+          if (head.x === snake[i].x && head.y === snake[i].y) return gameOver();
+        }
+
+        snake.unshift(head);
+
+        // Apple collision check
+        if (head.x === apple.x && head.y === apple.y) {
+          score += 10;
+          playBip(); // Play the retro beep
+          document.getElementById("score").innerText = score;
+          placeApple();
+          // Increase speed as score goes up
+          if (gameSpeed > 50) {
+            // Set a max speed (50ms interval)
+            gameSpeed -= 5; // Decrease interval by 5ms for each apple
+            clearInterval(gameLoop);
+            gameLoop = setInterval(update, gameSpeed);
+          }
+        } else {
+          snake.pop(); // remove tail if no apple eaten
+        }
+        draw();
+      }
+
+      function gameOver() {
+        gameRunning = false;
+        clearInterval(gameLoop);
+        document.getElementById("game-status").innerText = "SYSTEM FAILURE";
+        document.getElementById("game-status").className =
+          "text-red-500 font-bold animate-pulse";
+
+        // Check and save high score
+        if (score > highScore) {
+          highScore = score;
+          localStorage.setItem(highScoreKey, highScore);
+          document.getElementById("high-score").innerText = highScore;
+        }
+      }
+
+      function draw() {
+        // Draw background
+        ctx.fillStyle = "#0f172a"; // Navy theme
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw Data Packet (Apple)
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "#34d399";
+        ctx.fillStyle = "#34d399";
+        ctx.fillRect(
+          apple.x * gridSize + 1,
+          apple.y * gridSize + 1,
+          gridSize - 2,
+          gridSize - 2,
+        );
+
+        // Draw Snake
+        ctx.shadowBlur = 0;
+        snake.forEach((part, index) => {
+          ctx.fillStyle = index === 0 ? "#10b981" : "#059669"; // Lighter head, darker body
+          ctx.fillRect(
+            part.x * gridSize + 1,
+            part.y * gridSize + 1,
+            gridSize - 2,
+            gridSize - 2,
+          );
+        });
+      }
+
+      function handleInput(e) {
+        // Prevent space and arrow keys from scrolling the page
+        if (
+          ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(
+            e.key,
+          )
+        ) {
+          e.preventDefault();
+        }
+        if (!gameRunning && e.key === " ") return resetGame(); // Space restarts
+        if (e.key === "ArrowUp" && dy === 0) {
+          dx = 0;
+          dy = -1;
+        }
+        if (e.key === "ArrowDown" && dy === 0) {
+          dx = 0;
+          dy = 1;
+        }
+        if (e.key === "ArrowLeft" && dx === 0) {
+          dx = -1;
+          dy = 0;
+        }
+        if (e.key === "ArrowRight" && dx === 0) {
+          dx = 1;
+          dy = 0;
+        }
+      }
+    </script>
+  </body>
+</html>
